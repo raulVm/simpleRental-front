@@ -36,7 +36,7 @@
               <i
                 class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
               />
-              Docs
+              Docs3
             </a>
           </li>
         </ul>

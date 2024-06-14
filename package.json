@@ -1,19 +1,20 @@
 {
   "name": "vue-notus",
-  "homepage": "https://demos.creative-tim.com/vue-notus/",
   "version": "1.1.0",
   "description": "Vue Notus - A free Tailwind CSS and VueJS UI Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/vue-notus",
-  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && gulp licenses",
     "lint": "vue-cli-service lint",
     "build:tailwind": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "@popperjs/core": "2.9.1",
     "@tailwindcss/forms": "0.2.1",
     "@vue/compiler-sfc": "3.0.7",
@@ -21,21 +22,42 @@
     "core-js": "3.9.1",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "jquery": "^3.7.1",
+    "messageformat": "^2.3.0",
+    "svg.js": "^2.7.1",
     "tailwindcss": "2.0.4",
-    "vue": "3.0.7",
-    "vue-router": "4.0.5"
+    "vue": "^2.7.16",
+    "vue-carousel": "^0.18.0",
+    "vue-i18n": "^8.28.2",
+    "vue-i18n-bridge": "^9.12.1",
+    "vue-router": "^3.2.0",
+    "vue-select": "^3.20.3",
+    "vue-video-section": "^1.0.2",
+    "vue2-google-maps": "^0.10.7",
+    "vuetify": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
     "@babel/eslint-parser": "7.13.10",
+    "@intlify/vue-i18n-loader": "^3.2.0",
     "@vue/cli-plugin-babel": "5.0.0-alpha.7",
     "@vue/cli-plugin-eslint": "5.0.0-alpha.7",
     "@vue/cli-service": "5.0.0-alpha.7",
     "autoprefixer": "10.2.5",
     "eslint": "7.22.0",
     "eslint-plugin-vue": "7.7.0",
+    "html-webpack-plugin": "^5.6.0",
     "postcss": "8.2.8",
-    "vue-template-compiler": "2.6.12"
+    "sass": "~1.32.0",
+    "sass-loader": "^10.5.2",
+    "vue-cli-plugin-i18n": "~2.3.2",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-template-compiler": "2.6.12",
+    "vuetify-loader": "^1.7.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^7.2.1",
+    "webpack-dev-server": "^5.0.4"
   },
   "eslintConfig": {
     "root": true,
@@ -59,5 +81,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "homepage": "https://demos.creative-tim.com/vue-notus/",
+  "license": "MIT",
+  "repository": "https://github.com/creativetimofficial/vue-notus"
 }

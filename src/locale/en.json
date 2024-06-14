@@ -1,0 +1,35 @@
+{
+    "service": "SERVICES",
+    "optionService":{
+        "car": "Vehicle rental",
+        "estate":"Real estate rental",
+        "tourist": "Tourist attractions",
+        "properties": "Properties for sale",
+        "recycle":"Recycle and help"
+    },
+    "contac": "CONTACT US",
+    "location": "LOCATION",
+    "nav":{
+        "propiedades":"PROPERTIES",
+        "vehicles":"VEHICLES",
+        "atractions":"ATTRACTIONS",
+        "home": "HOME",
+        "riviera": "RIVIERA MAYA",
+        "meet": "MEET US",
+        "join": "JOIN US AT",
+        "blog": "BLOG"
+    },
+    "button":{
+        "trips":"AVAILABLE TRIPS",
+        "send": "SEND"
+    },
+    "form":{
+        "name": "Name",
+        "firstLast": "First last name",
+        "secondLast": "Second last name",
+        "mail": "Mail",
+        "phone": "Phone",
+        "subject":"Subject",
+        "message": "Message"
+    }
+}

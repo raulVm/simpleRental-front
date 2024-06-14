@@ -1,0 +1,35 @@
+{
+    "service": "SERVICIO",
+    "optionService":{
+        "car": "Alquiler de vehículos",
+        "estate":"Alquiler de inmuebles",
+        "tourist": "Atracciones turísticas",
+        "properties": "Propiedades en venta",
+        "recycle":"Recicla y ayuda"
+    },
+    "contac": "CONTÁCTANOS",
+    "location": "UBICACIÓN",
+    "nav":{
+        "propiedades":"PROPIEDADES",
+        "vehicles":"VEHÍCULOS",
+        "atractions":"ATRACCIONES",
+        "home": "INICIO",
+        "riviera": "RIVIERA MAYA",
+        "meet": "CONÓCENOS",
+        "join": "INTÉGRATE",
+        "blog": "BLOG"
+    },
+    "button":{
+        "trips":"VIAJES DISPONIBLES",
+        "send": "ENVIAR"
+    },
+    "form":{
+        "name": "Nombre (s)",
+        "firstLast": "Primer apellido",
+        "secondLast": "Segundo apellido",
+        "mail": "Correo",
+        "phone": "Teléfono",
+        "subject":"Subject",
+        "message": "Mensaje"
+    }
+}

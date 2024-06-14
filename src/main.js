@@ -1,97 +1,128 @@
-import { createApp } from "vue";
-import { createWebHistory, createRouter } from "vue-router";
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+// import { createWebHistory, createRouter } from "vue-router";
 
 // styles
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/styles/tailwind.css";
 
-// mouting point for the whole app
+/* import font awesome icon component */
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+// import vSelect from 'vue-select'
+// import 'vue-select/dist/vue-select.css';
 
-import App from "@/App.vue";
 
-// layouts
+library.add(faUserSecret)
 
-import Admin from "@/layouts/Admin.vue";
-import Auth from "@/layouts/Auth.vue";
+import i18n from './i18n'
+import vuetify from './plugins/vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import VueVideoSection from 'vue-video-section'
+import VDatePicker from './plugins/vuetify'
+// import vSelect from './plugins/vuetify'
+// import i18n from '@/plugins/i18n'
+// import VueI18n from "vue-i18n/types";
+// import createI18n from "vue-i18n-bridge";
+// import VueI18n from "vue-i18n/types";
+// import { VueI18n } from "vue-i18n";
 
-// views for Admin layout
+// import * as createI18n from "vue-i18n";
+// const i18n = createI18n({
+//   globalInjection: true,
+//   locale: navigator.language.startsWith('es')? 'es' : 'en',
+//   fallbackLocale: 'en',
+//   messages: {
+//     en: require("./locale/en.json"),
+//     es: require("./locale/es.json"),
+//   },
+// })
 
-import Dashboard from "@/views/admin/Dashboard.vue";
-import Settings from "@/views/admin/Settings.vue";
-import Tables from "@/views/admin/Tables.vue";
-import Maps from "@/views/admin/Maps.vue";
+// const i18n = createI18n({
+//   globalInjection: true,
+//   locale: navigator.language.startsWith('es')? 'es' : 'en',
+//   fallbackLocale: 'en',
+//   messages: {
+//     en: require("./locale/en.json"),
+//     es: require("./locale/es.json"),
+//   },
+// });
 
-// views for Auth layout
-
-import Login from "@/views/auth/Login.vue";
-import Register from "@/views/auth/Register.vue";
-
-// views without layouts
-
-import Landing from "@/views/Landing.vue";
-import Profile from "@/views/Profile.vue";
-import Index from "@/views/Index.vue";
 
 // routes
 
-const routes = [
-  {
-    path: "/admin",
-    redirect: "/admin/dashboard",
-    component: Admin,
-    children: [
-      {
-        path: "/admin/dashboard",
-        component: Dashboard,
-      },
-      {
-        path: "/admin/settings",
-        component: Settings,
-      },
-      {
-        path: "/admin/tables",
-        component: Tables,
-      },
-      {
-        path: "/admin/maps",
-        component: Maps,
-      },
-    ],
-  },
-  {
-    path: "/auth",
-    redirect: "/auth/login",
-    component: Auth,
-    children: [
-      {
-        path: "/auth/login",
-        component: Login,
-      },
-      {
-        path: "/auth/register",
-        component: Register,
-      },
-    ],
-  },
-  {
-    path: "/landing",
-    component: Landing,
-  },
-  {
-    path: "/profile",
-    component: Profile,
-  },
-  {
-    path: "/",
-    component: Index,
-  },
-  { path: "/:pathMatch(.*)*", redirect: "/" },
-];
+// const routes = [
+//   {
+//     path: "/admin",
+//     redirect: "/admin/dashboard",
+//     component: Admin,
+//     children: [
+//       {
+//         path: "/admin/dashboard",
+//         component: Dashboard,
+//       },
+//       {
+//         path: "/admin/settings",
+//         component: Settings,
+//       },
+//       {
+//         path: "/admin/tables",
+//         component: Tables,
+//       },
+//       {
+//         path: "/admin/maps",
+//         component: Maps,
+//       },
+//     ],
+//   },
+//   {
+//     path: "/auth",
+//     redirect: "/auth/login",
+//     component: Auth,
+//     children: [
+//       {
+//         path: "/auth/login",
+//         component: Login,
+//       },
+//       {
+//         path: "/auth/register",
+//         component: Register,
+//       },
+//     ],
+//   },
+//   {
+//     path: "/landing",
+//     component: Landing,
+//   },
+//   {
+//     path: "/profile",
+//     component: Profile,
+//   },
+//   {
+//     path: "/",
+//     component: Index,
+//   },
+//   { path: "/:pathMatch(.*)*", redirect: "/" },
+// ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes,
+// });
 
-createApp(App).use(router).mount("#app");
+/* add icons to the library */
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+// Vue.component('v-select', vSelect)
+Vue.component('vuetify',vuetify);
+Vue.component('vue-video-section', VueVideoSection)
+Vue.component('v-date-picker', VDatePicker)
+// createApp(App).use(router).use(i18n)
+// .component('font-awesome-icon', FontAwesomeIcon).mount("#app");
+new Vue({
+  router,
+  i18n,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app');
